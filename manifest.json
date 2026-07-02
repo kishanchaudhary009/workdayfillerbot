@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Workday Form Filler",
+  "version": "0.1.0",
+  "description": "Fill Workday application forms using locally saved profile data.",
+  "permissions": ["storage", "tabs", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://*.myworkdayjobs.com/*",
+    "https://*.myworkday.com/*"
+  ],
+  "action": {
+    "default_title": "Workday Form Filler",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "assets/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.myworkdayjobs.com/*",
+        "https://*.myworkday.com/*"
+      ],
+      "all_frames": true,
+      "js": ["assets/content.js"]
+    }
+  ]
+}
