@@ -4,12 +4,36 @@ export interface Profile {
   email: string;
   phone: string;
   address: string;
+  city: string;
+  postalCode: string;
+  emailAddress: string;
+  Password: string;
+  VerifyNewPassword: string;
+  country: string;
   linkedIn: string;
   github: string;
   university: string;
   degree: string;
+  education1School: string;
+  education1OverallResult: string;
+  education2School: string;
+  education2OverallResult: string;
+  website1Url: string;
+  website2Url: string;
   skills: string;
   experience: string;
+  workExperience1JobTitle: string;
+  workExperience1Company: string;
+  workExperience1Location: string;
+  workExperience1From: string;
+  workExperience1To: string;
+  workExperience1RoleDescription: string;
+  workExperience2JobTitle: string;
+  workExperience2Company: string;
+  workExperience2Location: string;
+  workExperience2From: string;
+  workExperience2To: string;
+  workExperience2RoleDescription: string;
 }
 
 export const emptyProfile: Profile = {
@@ -18,10 +42,34 @@ export const emptyProfile: Profile = {
   email: '',
   phone: '',
   address: '',
+  city: '',
+  postalCode: '',
+  emailAddress: '',
+  Password: '',
+  VerifyNewPassword: '',
+  country: '',
   linkedIn: '',
   github: '',
   university: '',
   degree: '',
+  education1School: '',
+  education1OverallResult: '',
+  education2School: '',
+  education2OverallResult: '',
+  website1Url: '',
+  website2Url: '',
   skills: '',
   experience: '',
+  workExperience1JobTitle: '',
+  workExperience1Company: '',
+  workExperience1Location: '',
+  workExperience1From: '',
+  workExperience1To: '',
+  workExperience1RoleDescription: '',
+  workExperience2JobTitle: '',
+  workExperience2Company: '',
+  workExperience2Location: '',
+  workExperience2From: '',
+  workExperience2To: '',
+  workExperience2RoleDescription: '',
 };
