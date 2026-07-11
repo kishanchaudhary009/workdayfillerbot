@@ -1,0 +1,14 @@
+INTRO (Short + Detailed)
+
+I’m Kishan Chaudhary, a final-year IT student who builds full-stack and AI products. 
+I enjoy solving real problems, working in small fast-moving teams, and exploring new tech. 
+I’ve worked across Web, App, and AI/ML; won multiple hackathons; and completed two internships—Android Development 
+and AI Software Development. Outside tech, I’m curious, collaborative, and consistent.
+Here my profile - 
+*Won 3 hackathons of Web and AI ML development.
+*Interned twice as Android development Intern and AI Software development Intern in 3rd year.
+*Great at problem solving as I have solved 300+ DSA questions.
+*Published 2 research papers in IEEE so great at research.
+*Final year B-Tech(IT) student from VIT Pune.
+
+

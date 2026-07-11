@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Resume</title>
+    <style>
+        body {
+            margin: 0;
+            background: #f7f7f7;
+            font-family: "Charter", "Segoe UI", sans-serif;
+        }
+
+        .page {
+            width: 850px;
+            margin: 0px;
+            background: #fff;
+            padding: 5px 5px;
+            border: 1px solid #e0e0e0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .contact a {
+            margin: 0 4px;
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+        }
+
+        section {
+            margin-top: 3px;
+        }
+
+        section h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+            color: #228B22;
+        }
+
+        .divider {
+            border-top: 1px solid #000;
+            margin-top: 2px;
+            width: 100%;
+        }
+
+
+        .section-content {
+            margin-top: 0px;
+            font-size: 14px;
+        }
+
+        ul {
+            margin: 1px;
+            padding-left: 1px;
+        }
+
+        li {
+            margin: 1px;
+            padding: 0;
+        }
+
+        .education-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-title {
+            font-weight: normal;
+            font-size: 15px;
+        }
+
+        .certifications-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .certification-item {
+            flex: 0 0 49.5%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="name" id="name"></div>
+            <div class="contact" id="contact"></div>
+        </div>
+
+        <section>
+            <h2>Summary</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="summary"></div>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="education"></div>
+        </section>
+        <section>
+            <h2>Experience</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="experience"></div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="projects"></div>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="skills"></div>
+        </section>
+
+
+
+
+
+        <section>
+            <h2>Achievements</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="achievements"></div>
+        </section>
+
+
+
+        <section>
+            <h2>Certifications and Publications(IEEE)</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="certifications_publications"></div>
+    </div>
+
+    <script>
+        let resumejson = {
+            "name": "Kishan Chaudhary", "contact": { "phone": "+91-9021295375", "email": "kishanchaudharyooo9@gmail.com", "location": "Pune", "github": "https://github.com/kishanchaudhary009", "linkedin": "https://www.linkedin.com/in/ChaudharyKishan/", "portfolio": "https://kishanchaudharyportfolio.vercel.app" },
+            "summary": "Software developer with experience building reliable web and mobile products, strong problem-solving ability, and a focus on shipping impactful solutions.",
+            "skills": {
+    "Programming Languages": [
+        "Python",
+        "JavaScript",
+        "TypeScript"
+    ],
+    "Frameworks": [
+        "React",
+        "Node.js",
+        "Express"
+    ],
+    "Databases": [
+        "MongoDB",
+        "MySQL"
+    ],
+    "Tools": [
+        "Git",
+        "Docker",
+        "VS Code"
+    ],
+    "Concepts": [
+        "Data Structures",
+        "OOP",
+        "System Design"
+    ]
+},
+
+            "education": [{ "degree": "B.Tech in Information Technology", "institution": "Vishwakarma Institute of Technology, Pune", "dates": "06/2022 - 06/2026", "details": { "Cgpa": "8.23/10" } }, { "degree": "HSC", "institution": "Sir Parshurambhau College, Pune", "dates": "2020 - 2022", "details": { "Percentage": "79.33%", "MHT-CET Percentile": "97.86" } }],
+            "experience": [
+    {
+        "title": "Software Developer",
+        "company": "Your Company",
+        "dates": "2023 - Present",
+        "bullets": [
+            "Built and maintained production-ready web applications using modern frontend and backend tooling.",
+            "Aligned solutions with the requirements described in the job description: Software engineer role"
+        ]
+    }
+],
+            "projects": [
+    {
+        "name": "Personal Portfolio Project",
+        "tech": [
+            "React",
+            "Node.js",
+            "MongoDB"
+        ],
+        "bullets": [
+            "Delivered a polished product experience with a strong focus on usability and maintainability.",
+            "Applied modern engineering practices to improve reliability and delivery speed."
+        ]
+    }
+],
+
+            "achievements": [
+                "2nd place at IEEE SPIT HackXplore Hackathon, 1st place Track Winner at QUASAR 3.0 Hackathon",
+                "Ranked 416 / 73K participants in Amazon ML Challenge 2024, Ranked ~3000 participants in Amazon ML Challenge 2025"
+            ]
+            ,
+            "certifications_publications": [
+                {
+                    "title": "SmartGrade: Automated Assessment with Cheat Detection",
+                    "platform": "IEEE Xplore",
+                    "link": "https://ieeexplore.ieee.org/document/10867155"
+                },
+                {
+                    "title": "SaralMarathi: A Regional Language Summarizer Using LLM",
+                    "platform": "IEEE Xplore",
+                    "link": "https://ieeexplore.ieee.org/document/10866933"
+                },
+                {
+                    "title": "Android Development",
+                    "platform": "Udemy",
+                    "link": "https://drive.google.com/open?id=1GjGwwj7hf75GC8LetoiS9l0ejIRT4aBb"
+                },
+                {
+                    "title": "Introduction to Cloud Computing",
+                    "platform": "Coursera",
+                    "link": "https://drive.google.com/file/d/1QPLRxPfBAwe_BC9y9hSK4etbKrTIrINJ/view?usp=sharing"
+                }
+            ]
+
+        }
+
+
+
+            ; // replace below
+    </script>
+
+    <script>
+        const r = resumejson;
+
+
+
+        document.getElementById("name").textContent = r.name;
+
+        document.getElementById("contact").innerHTML = `
+    <a>${r.contact.email}</a>|
+    <a>${r.contact.phone}</a>|
+    <a href="${r.contact.github}">GitHub</a>|
+    <a href="${r.contact.linkedin}">LinkedIn</a>|
+    <a href="${r.contact.portfolio}">Portfolio</a>
+`;
+
+        document.getElementById("summary").textContent = r.summary;
+        // ...existing code...
+        document.getElementById("experience").innerHTML =
+            (r.experience && r.experience.length > 0)
+                ? r.experience.map(ex => `
+            <div class="item-title" style="font-weight:bold; display:flex; justify-content:space-between;">
+                <span>${ex.title} - ${ex.company}</span>
+                <span style="font-weight:normal;">${ex.dates || ""}</span>
+            </div>
+            <ul>
+                ${ex.bullets.map(b =>
+                    `<li>${b.replace(/(\d+(?:st|nd|rd|th)?|[0-9]+%)/g, '<b>$1</b>')}</li>`
+                ).join("")}
+            </ul>
+        `).join('<div style="height:3px"></div>')
+                : "<i>No experience listed.</i>";
+        // ...existing code...
+
+        // ...existing code...
+        document.getElementById("projects").innerHTML = r.projects.map(p => `
+    <div class="item-title" style="font-weight:bold;">
+        ${p.name} <span style="font-weight:normal;">(${p.tech.join(", ")})</span>
+    </div>
+    <ul style="margin-left:0px;">
+        ${p.bullets.map(b => `<li>${b}</li>`).join("")}
+    </ul>
+`).join('<div style="height:3px"></div>');
+        // ...existing code...
+
+        // ...existing code...
+        let skillsHTML = "";
+        Object.entries(r.skills).forEach(([category, items]) => {
+            skillsHTML += `<b>${category}:</b> ${items.join(", ")}<br>`;
+        });
+        document.getElementById("skills").innerHTML = skillsHTML;
+        // ...existing code...
+
+
+        // ...existing code...
+        document.getElementById("education").innerHTML = r.education.map(e => {
+            const details = Object.entries(e.details).map(d =>
+                `${d[0]}: <b>${d[1]}</b>`
+            ).join(", ");
+            return `
+        <div class="item-title" style="margin-bottom:2px;">
+            ${e.degree} - <b>${e.institution}</b> | ${e.dates}${details ? " | " + details : ""}
+        </div>
+    `;
+        }).join("");
+        // ...existing code...
+
+
+        // ...existing code...
+        document.getElementById("achievements").innerHTML = `
+    <ul>${r.achievements.map(a =>
+            `<li>${a.replace(/(\d+(?:st|nd|rd|th)?)/g, '<b>$1</b>')}</li>`
+        ).join("")}</ul>
+`;
+        // ...existing code...
+
+        document.getElementById("certifications_publications").innerHTML = `
+    <div class="certifications-grid">
+        ${r.certifications_publications.map(item => {
+            let displayTitle = item.title;
+            if (item.title === "Android Development") {
+                displayTitle += ' - <span style="font-weight:bold;color:#000;">Udemy</span>';
+            }
+            if (item.title === "Introduction to Cloud Computing") {
+                displayTitle += ' - <span style="font-weight:bold;color:#000;">Coursera</span>';
+            }
+            return `
+                <div class="certification-item">
+                    <div class="item-title">
+                        <a href="${item.link}" target="_blank" style="text-decoration:none;color:inherit;">
+                            ${displayTitle}
+                        </a>
+                    </div>
+                </div>
+            `;
+        }).join("")}
+    </div>
+`;
+
+    </script>
+</body>
+
+</html>
