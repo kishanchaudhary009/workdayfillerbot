@@ -1,0 +1,72 @@
+PROJECT 1 — AI-Powered Learning Management System (Short + Detailed)
+Built a scalable AI-enhanced LMS (MERN + Flask) to automate assessments and viva.
+Tech: React, Node/Express, MongoDB, Flask, ChromaDB, Gemini 1.5 Flash, GOT-OCR, LMNT TTS, YOLOv8, Eden API.
+Flow:
+• Teachers upload chapter → converted into vector embeddings stored in ChromaDB (RAG).
+• Students upload answer PDF → React → Node → OCR → plagiarism check → evaluated via Gemini with rubrics (logic, language, CT).
+• Scores + feedback stored in MongoDB and shown on React dashboard.
+AI Viva:
+• Teacher provides 5-min audio → Flask clones voice with LMNT TTS.
+• React Speech Recognition captures student responses.
+• YOLOv8 performs proctoring (phone detection, multiple faces).
+• Flask evaluates student answers using RAG + LLM and saves the viva report.
+Why 2 Backends:
+Node for auth, routing, dashboards Flask for Python AI ecosystem. Communication via REST APIs.
+Extra Features: AI quiz generator, mind-maps, and 3D classroom visualizations.
+
+PROJECT 2— JobHunt
+AI-powered job search and resume optimization platform.
+Tech: Spring Boot, React.js, Python (AI/ML), AWS, WebClient, Jsoup, LLMs
+Functionality:
+• Users upload resume + job description.
+• AI tailors resume based on required skills in the JD.
+• Generates personalized LinkedIn recruiter messages.
+• Scrapes LinkedIn job listings based on filters (location, date).
+• Ranks jobs using AI-based resume–JD matching.
+• Auto-generates custom cover letters and job match score.
+Backend & AI:
+• Spring Boot REST APIs with WebClient for fetching LinkedIn pages.
+• Jsoup used for extracting job data from HTML.
+• Python scripts compute TF-IDF + cosine similarity for job matching.
+• Dual-LLM pipeline generates and refines resumes and cover letters.
+Purpose:
+Automate job searching and resume customization while learning full-stack development, AI integration, web scraping, and real-world automation workflows.
+
+Internships
+Android Developer Intern, Mobishaala 
+• Migrated legacy Kotlin android extensions app to ViewBinding: Updated deprecated Kotlin synthetics to ViewBinding, 
+resolving compatibility issues with libraries like Markdown MathView and YouTube Player, reducing maintenance overhead 
+and improving code stability. 
+• Resolved dependency and build issues: Migrated legacy libraries from JCenter (which was deprecated) to Maven Central 
+or JitPack, updating Gradle configurations and ensuring compatibility with latest library versions. 
+• Built a real-time conversational voice bot: Integrated Deepgram STT and Lmnt TTS via WebSockets using OkHttp for 
+low-latency voice interaction. Replaced MediaPlayer with AudioTrack for byte-stream audio, implemented Acoustic Echo 
+Cancellation (AEC), and connected to OpenAI/Gemini API using RAG and coroutines, reducing response time by 70–80%. 
+• Developed a book-conversational app using MVVM: Designed frontend with XML, implemented Room database, built a 
+credit system with Cashfree payments, added scanner functionality to connect directly to predefined books, and leveraged the 
+voice bot for interactive book conversations. 
+• Enhanced legacy application: Integrated the voice bot into the existing legacy app, providing seamless conversational 
+functionality across both applications.
+
+AI Software Development Intern, Eduplus Campus
+Objective
+Build an automated evaluation system using OCR and AI to improve grading accuracy, scalability, and reliability.
+Problem Statement
+Traditional grading is slow and inconsistent. The system automates extraction, processing, and evaluation of student answers using robust backend services.
+Tech Stack & Engineering Focus
+Backend Services: Python/Flask API architecture
+ML Integration: MiniLM embeddings for semantic scoring
+OCR Pipeline: GOTOCR for handwritten text extraction
+System Engineering: Modular services, caching, async processing
+Workflow / Architecture
+Preprocessing: Image cleanup + OCR pipeline
+Segmentation: Regex-based question mapping
+Evaluation Engine: Embedding similarity + scoring logic
+Service Layer: Flask APIs for evaluation, feedback, and reporting
+Results & Metrics
+System Accuracy: ~92% text extraction accuracy
+Performance: ~90% reduction in grading time
+Scalability: Processed 100+ answer sheets with stable throughput
+Feedback Quality: Automated detailed scoring for all evaluated answers
+Impact
+Built a production-ready evaluation pipeline improving reliability, speed, and student learning outcomes.

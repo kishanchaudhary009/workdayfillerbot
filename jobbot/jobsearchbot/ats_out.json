@@ -1,0 +1,100 @@
+{
+    "summary": "Software Engineer Intern skilled in building scalable, distributed, and AI-powered systems, proficient in Java, Python, and full-stack development for high-performance applications.",
+    "skills": {
+        "Programming Languages": [
+            "Python",
+            "Java",
+            "Kotlin",
+            "C++",
+            "JavaScript"
+        ],
+        "Frameworks Libraries": [
+            "Spring Boot",
+            "Flask",
+            "React.js",
+            "Node.js",
+            "Express.js",
+            "Three.js",
+            "WebSockets",
+            "ChromaDB",
+            "JUnit"
+        ],
+        "Databases": [
+            "MongoDB",
+            "SQL",
+            "Room Database",
+            "AWS RDS"
+        ],
+        "Tools": [
+            "Git",
+            "AWS (EC2, Elastic Beanstalk)",
+            "Postman"
+        ],
+        "Concepts": [
+            "Data Structures & Algorithms",
+            "Object-Oriented Programming",
+            "Operating Systems",
+            "Software Engineering Principles",
+            "Distributed Systems",
+            "Generative AI",
+            "RAG",
+            "LLM",
+            "AI Workflows",
+            "Prompt Engineering",
+            "Web Scraping"
+        ]
+    },
+    "experience": [
+        {
+            "title": "AI Software Development Intern",
+            "company": "Eduplus Campus",
+            "dates": "2024",
+            "bullets": [
+                "\u2022 Engineered and optimized a Python-based answer sheet evaluation system leveraging full-page OCR and NLP (MiniLM embeddings) for semantic scoring, achieving 92% text extraction accuracy and reducing processing time by 30%.",
+                "\u2022 Designed and implemented a scalable backend architecture with Python/Flask APIs for automated evaluation and reporting, processing 100+ answer sheets with stable throughput and reducing grading time by 90%.",
+                "\u2022 Applied robust software engineering principles to develop a modular and production-ready evaluation pipeline, enhancing reliability, speed, and student learning outcomes."
+            ]
+        },
+        {
+            "title": "Android Developer Intern",
+            "company": "Mobishaala",
+            "dates": "2024",
+            "bullets": [
+                "\u2022 Developed a real-time conversational voice bot integrating WebSockets, Deepgram STT, and LLM (OpenAI/Gemini) with RAG, optimizing audio streaming with AudioTrack and Acoustic Echo Cancellation to reduce response time by 70-80%.",
+                "\u2022 Migrated the legacy Android application codebase from Kotlin extensions to ViewBinding, resolving compatibility issues with deprecated libraries and reducing maintenance overhead for improved code stability and adherence to software engineering principles."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "JobHunt",
+            "tech": [
+                "Spring Boot",
+                "React.js",
+                "Python",
+                "AWS",
+                "LLMs"
+            ],
+            "bullets": [
+                "\u2022 Developed an AI-powered job search and resume optimization platform, utilizing a dual-LLM pipeline for generating tailored resumes and personalized LinkedIn messages based on job descriptions.",
+                "\u2022 Implemented robust web scraping capabilities using Spring Boot (WebClient) and Jsoup to extract and rank LinkedIn job listings based on AI-driven resume-to-JD matching algorithms.",
+                "\u2022 Engineered a full-stack solution to automate job searching, cover letter generation, and resume customization, demonstrating real-world AI integration and automation workflows."
+            ]
+        },
+        {
+            "name": "AI-Powered Learning Management System",
+            "tech": [
+                "Flask",
+                "React",
+                "MongoDB",
+                "ChromaDB",
+                "LLMs"
+            ],
+            "bullets": [
+                "\u2022 Designed and built a scalable AI-enhanced Learning Management System with context-aware assessments and AI-driven feedback, utilizing RAG and LLMs (Gemini 1.5 Flash) for personalized learning experiences.",
+                "\u2022 Developed an immersive 3D virtual classroom rendering GLB models with Three.js and integrating WebSockets for real-time audio conferencing and position tracking, enhancing user engagement and collaborative features.",
+                "\u2022 Implemented a robust MERN stack architecture with a Flask backend for the Python AI ecosystem, ensuring scalable performance and efficient communication via REST APIs for authentication and data management."
+            ]
+        }
+    ]
+}

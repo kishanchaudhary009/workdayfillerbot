@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Resume</title>
+    <style>
+        body {
+            margin: 0;
+            background: #f7f7f7;
+            font-family: "Charter", "Segoe UI", sans-serif;
+        }
+
+        .page {
+            width: 850px;
+            margin: 0px;
+            background: #fff;
+            padding: 4px 4px;
+            border: 1px solid #e0e0e0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .contact a {
+            margin: 0 4px;
+            text-decoration: none;
+            color: #000;
+            font-size: 13px;
+        }
+
+        section {
+            margin-top: 2px;
+        }
+
+        section h2 {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+            color: #228B22;
+        }
+
+        .divider {
+            border-top: 1px solid #000;
+            margin-top: 2px;
+            width: 100%;
+        }
+
+
+        .section-content {
+            margin-top: 0px;
+            font-size: 14px;
+        }
+
+        ul {
+            margin: 1px;
+            padding-left: 1px;
+        }
+
+        li {
+            margin: 1px;
+            padding: 0;
+        }
+
+        .education-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-title {
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        .certifications-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .certification-item {
+            flex: 0 0 49.5%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="name" id="name"></div>
+            <div class="contact" id="contact"></div>
+        </div>
+
+        <section>
+            <h2>Summary</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="summary"></div>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="education"></div>
+        </section>
+        <section>
+            <h2>Experience</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="experience"></div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="projects"></div>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="skills"></div>
+        </section>
+
+
+
+
+
+        <section>
+            <h2>Achievements</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="achievements"></div>
+        </section>
+
+
+
+        <section>
+            <h2>Certifications and Publications(IEEE)</h2>
+            <div class="divider"></div>
+            <div class="section-content" id="certifications_publications"></div>
+    </div>
+
+    <script>
+        let resumejson = {
+            "name": "Kishan Chaudhary", "contact": { "phone": "+91-9021295375", "email": "kishanchaudharyooo9@gmail.com", "location": "Pune", "github": "https://github.com/kishanchaudhary009", "linkedin": "https://www.linkedin.com/in/ChaudharyKishan/", "portfolio": "https://kishanchaudharyportfolio.vercel.app" },
+            "summary": "Android Developer skilled in designing, developing, and maintaining high-quality mobile applications using Kotlin and Java. Proficient in modern Android architecture (MVVM), Jetpack components, REST API integration, and performance optimization. Strong problem-solver focused on delivering robust and user-friendly solutions.",
+            "skills": {
+    "Programming Languages": [
+        "Kotlin",
+        "Java"
+    ],
+    "Frameworks Libraries": [
+        "Android SDK",
+        "Android Studio",
+        "Jetpack (ViewModel, LiveData, Room, WorkManager, Navigation)",
+        "Coroutines",
+        "Flow",
+        "MVVM",
+        "Koin",
+        "OkHttp",
+        "CameraX",
+        "MPAndroidChart",
+        "Retrofit"
+    ],
+    "Databases": [
+        "Room",
+        "SQLite",
+        "Firebase Realtime Database",
+        "Firebase Firestore"
+    ],
+    "Tools": [
+        "Git",
+        "Firebase (Authentication, Cloud Messaging, Analytics)"
+    ],
+    "Concepts": [
+        "REST APIs",
+        "JSON Parsing",
+        "Material Design",
+        "Dependency Injection",
+        "Asynchronous Programming",
+        "Unit Testing",
+        "Code Reviews",
+        "Agile Methodologies",
+        "OOP",
+        "Problem Solving"
+    ]
+},
+
+            "education": [{ "degree": "B.Tech in Information Technology", "institution": "Vishwakarma Institute of Technology, Pune", "dates": "06/2022 - 06/2026", "details": { "Cgpa": "8.52/10" } }, { "degree": "HSC", "institution": "Sir Parshurambhau College, Pune", "dates": "2020 - 2022", "details": { "Percentage": "79.33%", "MHT-CET Percentile": "97.86" } }],
+            "experience": [
+    {
+        "title": "Android Developer Intern",
+        "company": "Mobishaala",
+        "dates": "09/24 - 02/25",
+        "bullets": [
+            "Built a real-time conversational voice bot integrating Deepgram STT and Lmnt TTS via WebSockets using OkHttp; optimized for byte-stream audio and Acoustic Echo Cancellation, connecting to OpenAI/Gemini API via RAG and Coroutines, reducing response time by 70\u201380%.",
+            "Developed a book-conversational Android application using MVVM architecture, Room database, XML UI, and Cashfree payments; integrated the voice bot for interactive book discussions.",
+            "Migrated legacy Kotlin Android extensions to ViewBinding and resolved dependency issues by updating libraries from JCenter to Maven Central/JitPack, improving code stability and reducing maintenance overhead."
+        ]
+    },
+    {
+        "title": "AI Software Development Intern (AI + Android)",
+        "company": "Eduplus Campus",
+        "dates": "07/24 - 12/24",
+        "bullets": [
+            "Designed and developed an Android application using CameraX to capture and digitize handwritten answer sheets, integrating with a Flask backend via OkHttp/Retrofit and Kotlin Coroutines for asynchronous communication.",
+            "Implemented automated grading workflow that leveraged GOT-OCR for text extraction and MiniLM embeddings for semantic similarity evaluation, achieving 92% recognition accuracy and reducing manual grading time by 90%.",
+            "Utilized WorkManager to handle reliable background PDF uploads and retries, syncing evaluated results back to the Android app for review and publishing, streamlining the grading process for educators."
+        ]
+    }
+],
+            "projects": [
+    {
+        "name": "AI-Powered Learning Management System",
+        "tech": [
+            "Kotlin",
+            "MVVM",
+            "Firebase",
+            "OkHttp"
+        ],
+        "bullets": [
+            "Engineered a mobile-first Android LMS application with Kotlin and MVVM, enabling student login (Firebase Auth), chapter/answer uploads, PDF viewing, and real-time score dashboards with efficient REST API calls (OkHttp + Coroutines).",
+            "Developed AI-driven assessment modules, including an AI Viva module with voice cloning (LMNT-TTS) and speech recognition, and an AI Proctoring system (YOLOv8 inference) integrated via low-bandwidth Android streams.",
+            "Implemented a dual-backend architecture (Flask for AI, Node.js for authentication) with secure REST API communication from Android, providing AI-generated feedback and viva reports."
+        ]
+    },
+    {
+        "name": "VitalLink \u2014 Android Health Monitor",
+        "tech": [
+            "Kotlin",
+            "Koin",
+            "Firebase",
+            "MPAndroidChart"
+        ],
+        "bullets": [
+            "Developed an Android application integrating with an ESP32 device via lightweight REST API for real-time ECG and SpO\u2082 monitoring, using OkHttp, Coroutines, and LiveData for smooth UI updates.",
+            "Visualized continuous physiological data with MPAndroidChart and architected the app using Koin for dependency injection, ensuring clean module separation and testability.",
+            "Implemented a smart alert system with WorkManager and push notifications for medically-unsafe thresholds and streamed data to Firebase Realtime Database for remote monitoring and historical analysis."
+        ]
+    }
+],
+
+            "achievements": [
+                "2nd place at IEEE SPIT HackXplore Hackathon, 1st place Track Winner at QUASAR 3.0 Hackathon",
+                "Ranked 416 / 73K participants in Amazon ML Challenge 2024, Ranked ~3000 participants in Amazon ML Challenge 2025"
+            ]
+            ,
+            "certifications_publications": [
+                {
+                    "title": "SmartGrade: Automated Assessment with Cheat Detection",
+                    "platform": "IEEE Xplore",
+                    "link": "https://ieeexplore.ieee.org/document/10867155"
+                },
+                {
+                    "title": "SaralMarathi: A Regional Language Summarizer Using LLM",
+                    "platform": "IEEE Xplore",
+                    "link": "https://ieeexplore.ieee.org/document/10866933"
+                },
+                {
+                    "title": "Android Development",
+                    "platform": "Udemy",
+                    "link": "https://drive.google.com/open?id=1GjGwwj7hf75GC8LetoiS9l0ejIRT4aBb"
+                },
+                {
+                    "title": "Introduction to Cloud Computing",
+                    "platform": "Coursera",
+                    "link": "https://drive.google.com/file/d/1QPLRxPfBAwe_BC9y9hSK4etbKrTIrINJ/view?usp=sharing"
+                }
+            ]
+
+        }
+
+
+
+            ; // replace below
+    </script>
+
+    <script>
+        const r = resumejson;
+
+
+
+        document.getElementById("name").textContent = r.name;
+
+        document.getElementById("contact").innerHTML = `
+    ·<a href="mailto:${r.contact.email}">${r.contact.email}</a>·
+    <a>${r.contact.phone}</a>·
+    <a href="${r.contact.github}">GitHub</a>·
+    <a href="${r.contact.linkedin}">LinkedIn</a>·
+    <a href="${r.contact.portfolio}">Portfolio</a>·
+`;
+
+        document.getElementById("summary").textContent = r.summary;
+        // ...existing code...
+        document.getElementById("experience").innerHTML =
+            (r.experience && r.experience.length > 0)
+                ? r.experience.map(ex => `
+            <div class="item-title" style="font-weight:bold; display:flex; justify-content:space-between;">
+                <span>${ex.title} - ${ex.company}</span>
+                <span style="font-weight:normal;">${ex.dates || ""}</span>
+            </div>
+            <ul>
+                ${ex.bullets.map(b =>
+                    `<li>${b.replace(/(\d+(?:st|nd|rd|th)?|[0-9]+%)/g, '<b>$1</b>')}</li>`
+                ).join("")}
+            </ul>
+        `).join('<div style="height:3px"></div>')
+                : "<i>No experience listed.</i>";
+        // ...existing code...
+
+        // ...existing code...
+        document.getElementById("projects").innerHTML = r.projects.map(p => `
+    <div class="item-title" style="font-weight:bold;">
+        ${p.name} <span style="font-weight:normal;">(${p.tech.join(", ")})</span>
+    </div>
+    <ul style="margin-left:0px;">
+        ${p.bullets.map(b => `<li>${b}</li>`).join("")}
+    </ul>
+`).join('<div style="height:3px"></div>');
+        // ...existing code...
+
+        // ...existing code...
+        let skillsHTML = "";
+        Object.entries(r.skills).forEach(([category, items]) => {
+            skillsHTML += `<b>${category}:</b> ${items.join(", ")}<br>`;
+        });
+        document.getElementById("skills").innerHTML = skillsHTML;
+        // ...existing code...
+
+
+        // ...existing code...
+        document.getElementById("education").innerHTML = r.education.map(e => {
+            const details = Object.entries(e.details).map(d =>
+                `${d[0]}: <b>${d[1]}</b>`
+            ).join(", ");
+            return `
+        <div class="item-title" style="margin-bottom:2px;">
+            ${e.degree} - <b>${e.institution}</b> | ${e.dates}${details ? " | " + details : ""}
+        </div>
+    `;
+        }).join("");
+        // ...existing code...
+
+
+        // ...existing code...
+        document.getElementById("achievements").innerHTML = `
+    <ul>${r.achievements.map(a =>
+            `<li>${a.replace(/(\d+(?:st|nd|rd|th)?)/g, '<b>$1</b>')}</li>`
+        ).join("")}</ul>
+`;
+        // ...existing code...
+
+        document.getElementById("certifications_publications").innerHTML = `
+    <div class="certifications-grid">
+        ${r.certifications_publications.map(item => {
+            let displayTitle = item.title;
+            if (item.title === "Android Development") {
+                displayTitle += ' - <span style="font-weight:bold;color:#000;">Udemy</span>';
+            }
+            if (item.title === "Introduction to Cloud Computing") {
+                displayTitle += ' - <span style="font-weight:bold;color:#000;">Coursera</span>';
+            }
+            return `
+                <div class="certification-item">
+                    <div class="item-title">
+                        <a href="${item.link}" target="_blank" style="text-decoration:none;color:inherit;">
+                            ${displayTitle}
+                        </a>
+                    </div>
+                </div>
+            `;
+        }).join("")}
+    </div>
+`;
+
+    </script>
+</body>
+
+</html>
