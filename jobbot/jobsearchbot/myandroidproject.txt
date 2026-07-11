@@ -1,0 +1,65 @@
+Project1 :AI-Powered Learning Management System (Android + Flask + Node)
+Built a mobile-first AI-enhanced LMS app where students can upload answers, receive AI-generated feedback, and complete AI-driven viva exams directly from Android.
+Android App (Kotlin, MVVM):
+Handled student login (Firebase Auth), chapter/answer uploads, PDF viewing, and real-time score dashboards. Used OkHttp + Coroutines for efficient REST calls to Python/Node backends. Implemented lightweight JSON parsing for faster mobile responses.
+AI Assessment Pipeline (Flask Backend):
+Android uploads PDFs → Flask performs OCR (GOT-OCR), plagiarism check, and evaluates answers using Gemini 1.5 Flash + RAG (ChromaDB). The API returns structured feedback, rubrics, and scoring to the Android app.
+Voice-Based AI Viva Module:
+Teacher uploads 5-min audio → Flask generates voice clone (LMNT-TTS).
+Android uses built-in SpeechRecognizer for the student’s responses.
+Flask evaluates answers through RAG + LLM and generates a viva score/report.
+AI Proctoring:
+Integrated YOLOv8 server-side to detect phones, additional faces, and suspicious activity during viva. Android streams low-resolution frames for inference to keep bandwidth low.
+Why Dual Backends:
+Node.js for authentication, role-based routing, and user dashboards.
+Flask for Python's AI models (OCR, TTS, embeddings, YOLO, Gemini).
+Android communicates with both via secure REST APIs.
+Extra AI Features:
+In-app AI quiz generator, mind-map creator, and supports integration with 3D classroom modules via API.
+
+
+Project 2 :VitalLink — Android Health Monitor (ESP32 + Wi-Fi)
+Developed an Android application that integrates with an ESP32-based ECG and SpO₂ monitoring device over Wi-Fi using a lightweight REST API. Implemented real-time vitals streaming with OkHttp, using Coroutines + LiveData for smooth, low-latency UI updates. Visualized continuous ECG waveforms, heart-rate, and oxygen saturation using MPAndroidChart, optimized for high-frequency sampling.
+Architected the app using Koin for dependency injection, clean module separation, and testable network + repository layers. Streamed incoming data to Firebase Realtime Database for remote monitoring and historical analysis. Added a smart alert workflow using WorkManager and push notifications that triggers automatically when readings cross medically-unsafe thresholds. Improved lifecycle handling, networking efficiency, and rendering stability for a reliable medical-grade experience.
+
+
+My Internship Experience : 
+Android Developer Intern, Mobishaala 
+• Migrated legacy Kotlin android extensions app to ViewBinding: Updated deprecated Kotlin synthetics to ViewBinding, 
+resolving compatibility issues with libraries like Markdown MathView and YouTube Player, reducing maintenance overhead 
+and improving code stability. 
+• Resolved dependency and build issues: Migrated legacy libraries from JCenter (which was deprecated) to Maven Central 
+or JitPack, updating Gradle configurations and ensuring compatibility with latest library versions. 
+• Built a real-time conversational voice bot: Integrated Deepgram STT and Lmnt TTS via WebSockets using OkHttp for 
+low-latency voice interaction. Replaced MediaPlayer with AudioTrack for byte-stream audio, implemented Acoustic Echo 
+Cancellation (AEC), and connected to OpenAI/Gemini API using RAG and coroutines, reducing response time by 70–80%. 
+• Developed a book-conversational app using MVVM: Designed frontend with XML, implemented Room database, built a 
+credit system with Cashfree payments, added scanner functionality to connect directly to predefined books, and leveraged the 
+voice bot for interactive book conversations. 
+• Enhanced legacy application: Integrated the voice bot into the existing legacy app, providing seamless conversational 
+functionality across both applications.
+
+AI Software Development Intern(AI + Android), Eduplus Campus
+Objective
+Automate evaluation of handwritten answer sheets using AI and OCR, and integrate the evaluation 
+workflow into a teacher-facing Android application to improve grading accuracy, efficiency, and fairness.
+Problem Statement
+Manual grading of handwritten answer sheets is time-consuming and error-prone. The system enables 
+teachers to capture answer sheets directly from an Android device, digitize responses, apply automated grading logic, 
+and generate structured feedback.
+Workflow / Architecture
+Teachers use the Android application to select a class and student, scan multiple answer-sheet pages using the phone camera 
+(using CameraX), and automatically generate a PDF. The PDF is uploaded to the backend via OkHttp/Retrofit with 
+Kotlin Coroutines for asynchronous communication. On the backend, images are preprocessed and passed through GOTOCR 
+for handwritten text extraction. Extracted answers are segmented question-wise using pattern-based alignment and matched 
+with model answers. Semantic similarity for evaluation is computed using MiniLM embeddings, and scores are aggregated to 
+generate final grades along with detailed feedback. Evaluated results are stored in a Flask backend database and synced 
+back to the Android app for review and publishing. WorkManager was used to handle background uploads and retries to ensure 
+reliability.
+Results & Metrics
+The system achieved approximately 92% handwritten text recognition accuracy and reduced manual grading time by nearly 90%.
+It was tested on 100+ scanned answer sheets and provided automated, question-wise scoring and feedback for all evaluated
+responses. The solution significantly reduced teacher workload while improving grading consistency and turnaround time.
+Impact
+Enabled end-to-end answer sheet evaluation directly from Android devices, streamlining the grading workflow for 
+educators and demonstrating practical integration of AI systems within a mobile application environment.

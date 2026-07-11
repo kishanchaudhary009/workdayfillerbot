@@ -1,0 +1,86 @@
+Project 1: Product Price Estimation using Multi-Modal Machine Learning — Amazon ML (2025)
+Objective: Develop a system to accurately predict product prices by combining image-based and text-based product features using advanced machine learning techniques.
+Approach & Workflow:
+Image Feature Extraction:
+Used Gemma 3:3B-QAT vision model to process product images.
+Extracted textual and descriptive features via built-in OCR to enrich textual input for modeling.
+Text Feature Extraction:
+Applied Gemma 3:1B to catalog data to identify critical attributes such as item name, brand, category, quantity, and historical pricing.
+Converted textual features to E5-Base-V2 embeddings.
+Applied one-hot encoding for categorical attributes to preserve structured information.
+Modeling:
+Trained multiple regression models: XGBoost, LightGBM, and Approximate Nearest Neighbour (ANN).
+Evaluated models on 70/30 train-test split using SMAPE as the primary metric.
+Results:
+XGBoost performed best with 46.3% SMAPE, outperforming LightGBM (48.1%) and ANN (55.7%).
+Demonstrated effective fusion of multi-modal features (image + text) for price estimation.
+Tools & Techniques:
+Multi-modal embeddings, OCR, LLM-based feature extraction, XGBoost, LightGBM, ANN, E5-Base-V2 embeddings, one-hot encoding, regression modeling, feature fusion.
+Impact:
+Improved price prediction accuracy using a combination of vision-based textual descriptions and catalog content.
+System scalable to >100k products, enabling automated, data-driven pricing decisions.
+
+
+Project2: Dyslexia Classification from Eye-Tracking (Time-Series ML)
+Built a dyslexia detection system using 4-channel eye-tracking sequences (LX, LY, RX, RY) from 250 participants. The workflow progressed from handcrafted statistical modeling to deep temporal modeling with 1D-CNNs.
+Phase 1 — Regression Baseline with Feature Engineering
+Extracted classical oculomotor features:
+Fixation metrics: duration, stability
+Saccades: length, velocity, forward/backward counts
+Regressions: backward eye movements
+Reading rhythm features
+Trained logistic regression / RF models, but feature aggregation removed the temporal gaze patterns crucial for dyslexia detection → motivated shift to raw sequence modeling.
+Phase 2 — CNN on Raw Gaze Sequences
+Used 1D-CNNs to learn temporal motifs (fixation bursts, regressions) directly from time-series.
+Preprocessing: padding/truncation, channel-wise z-score normalization, stratified train/test split.
+Phase 3 — CNN Overfitting & Fixes
+Initial CNN overfit (~100% train, ~75% val). Improved generalization by:
+Reducing Conv1D filters (64→32→16)
+Adding BatchNorm, Dropout (0.3–0.4)
+Applying L2 regularization (1e-3)
+Lowering LR to 1e-4 (Adam)
+Using EarlyStopping
+Final Model
+Conv1D(16) → BN → Pool → Dropout →
+Conv1D(32) → BN → Pool → Dropout →
+Dense(64, L2) → Dropout → Dense(1, Sigmoid)
+Training: Adam + BCE, batch size 8.
+Results
+Test Accuracy: 0.885
+Confusion Matrix: TN=23, FP=2, FN=7, TP=20
+
+
+My Internship Experience : 
+AI Software Development Intern, Eduplus Campus
+Objective
+Automate evaluation of handwritten answer sheets using OCR and AI, improving grading accuracy, efficiency, and fairness.
+Problem Statement
+Manual grading is time-consuming and error-prone. The system digitizes student answers, applies grading criteria, and provides detailed feedback.
+Tech Stack & AI Tools
+OCR & Text Extraction: GOTOCR for handwritten text
+Text Similarity & Evaluation: MiniLM embeddings for semantic comparison
+Backend & Deployment: Python/Flask APIs serving AI models
+Workflow / Architecture
+Preprocessing: Image cleaning and OCR extraction
+Segmentation & Alignment: Regex-based question-wise splitting and matching with model answers
+Evaluation: MiniLM computes semantic similarity per answer
+Scoring & Feedback: Aggregate similarity for total grade; detailed suggestions for improvement
+Results & Metrics
+Accuracy: ~92% recognition of handwritten text
+Grading Efficiency: Reduced manual grading time by ~90%
+Student Coverage: Tested on 100+ scanned answer sheets
+Feedback Quality: Provided automated, detailed scoring for 100% of answers
+Impact: Reduces manual workload, speeds grading, and improves learning outcomes.
+
+Android Developer, Mobishaala
+Modernized the codebase by migrating the entire legacy project from deprecated Kotlin Android Extensions to ViewBinding, fixing hidden nullability issues and improving compatibility with AI/ML libraries used in the app.
+Resolved critical dependency failures by moving old libraries from JCenter to Maven Central/JitPack, updating Gradle + AndroidX versions, and ensuring a stable environment for integrating AI voice models and ML APIs.
+Built a low-latency AI conversational voice bot:
+Integrated Deepgram STT and Lmnt TTS using WebSockets + OkHttp.
+Switched audio output from MediaPlayer to AudioTrack byte-streaming, enabling real-time TTS playback.
+Implemented AEC (Acoustic Echo Cancellation) for cleaner AI-driven responses.
+Integrated OpenAI/Gemini using RAG pipelines + coroutines, reducing end-to-end conversational latency by 70–80%.
+Developed an AI-augmented book-conversation app (MVVM):
+XML UI + Room database for user/content management.
+Added a credit/payment system (Cashfree), a scanner to auto-map physical books, and the AI voice agent for context-aware interactive Q&A on books.
+Upgraded the legacy Mobishaala application with AI features by embedding the voice bot into existing modules, enabling unified conversational AI across both the new and old app versions.
